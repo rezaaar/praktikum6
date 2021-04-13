@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 0 10px;
+        }
+
+        span {
+            white-space: nowrap;
+        }
+
+        input[type=text],input[type=email],input[type=url], select, textarea{
+            width: 40%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        #ttl {
+            width: 20%;
+        }
+
+        input[type=date] {
+            width: 19.8%;
+            padding: 3px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type=radio] {
+            margin-left: 2em;
+        }
+
+        .inputRadio {
+            margin-left: 4.8em;
+        }
+
+        input[type=checkbox] {
+            margin-left: 2em;
+        }
+
+        .inputCheckbox {
+            margin-left: 7em;
+        }
+
+        label {
+            padding: 12px 12px 12px 12px;
+            display: inline-block;
+            width: 15%;
+        }
+
+        .pendidikan > span > label {
+            padding-left: 3em;
+        }
+
+        button {
+            background-color: darkred;
+            color: white;
+            margin-top: 1em;
+            margin-left: 1em;
+            padding: 7px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<form id="form" action="">
+    <span>
+        <label for="nama">1. Nama</label>
+        <input id="nama" name="Nama" type="text">
+    </span>
+
+    <span>
+        <label for="nrp">2. NRP</label>
+        <input id="nrp" name="NRP" type="text">
+    </span>
+
+    <span>
+        <label for="kelas">3. Kelas</label>
+        <input id="kelas" name="Kelas" type="text">
+    </span>
+
+    <div class="radio">
+        <span>
+        <label >4. Jenis Kelamin
+            <span class="inputRadio">
+                <input type="radio" id="pria" name="gender" value="pria"/>
+                Pria
+                <input type="radio" id="wanita" name="gender" value="wanita"/>
+                Wanita
+            </span>
+        </label>
+    </span>
+    </div>
+
+    <span>
+        <label for="agama">5. Agama</label>
+        <select id="agama" name="agama" onchange="agamaMsg(this)">
+            <option disabled selected value> -- Pilih agama anda -- </option>
+            <option value="Islam">Islam</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Buddha">Buddha</option>
+            <option value="Kong Hu Cu">Kong Hu Cu</option>
+            <option value="lainnya">Lainnya</option>
+        </select>
+    </span>
+
+    <span>
+        <label for="ttl">6. Tempat / Tanggal lahir</label>
+        <input id="ttl" name="Tempat lahir" type="text">
+        <input name="Tanggal lahir" type="date">
+    </span>
+
+    <span>
+        <label for="alamat">7. Alamat</label>
+        <textarea style="margin-top: 8px" id="alamat" name="Alamat"></textarea>
+    </span>
+
+    <div>
+        <p style="margin-left: 12px">8. Riwayat Pendidikan</p>
+        <div class="pendidikan">
+            <span>
+                <label for="sd">a. SD</label>
+                <input type="text" name="SD" id="sd">
+            </span>
+            <span>
+                <label for="smp">b. SMP</label>
+                <input type="text" name="SMP" id="smp">
+            </span>
+            <span>
+                <label for="sd">c. SMA</label>
+                <input type="text" name="SMA" id="sma">
+            </span>
+        </div>
+    </div>
+
+    <span>
+        <label for="email">9. Email</label>
+        <input type="email" name="Email" id="email">
+    </span>
+
+    <span>
+        <label for="page">10. Home Page</label>
+        <input type="url" name="Home Page" id="page">
+    </span>
+
+    <span>
+        <label for="hobby">11. Hobby</label>
+        <textarea style="margin-top: 8px" id="hobby"></textarea>
+    </span>
+
+    <div class="checkbox">
+        <span>
+        <label >12. Interest
+            <span class="inputCheckbox">
+                <input type="checkbox" id="komputer" name="interest" value="Komputer"/>
+                Komputer
+                <input type="checkbox" id="sport" name="interest" value="Sport"/>
+                Sport
+                <input type="checkbox" id="travel" name="interest" value="Travelling"/>
+                Travelling
+                <input type="checkbox" id="write" name="interest" value="Writting"/>
+                Writting
+                <input type="checkbox" id="read" name="interest" value="Reading"/>
+                Reading
+            </span>
+        </label>
+    </span>
+    </div>
+
+    <span>
+    <button id="submit" onclick="validate(form.elements)">SIMPAN</button>
+    <button type="reset">RESET</button>
+    </span>
+</form>
+</div>
+<script src="core.js">
+
+
+</script>
+</body>
+</html>
